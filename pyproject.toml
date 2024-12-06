@@ -1,3 +1,29 @@
+[build-system]
+requires = ["setuptools >= 62.6"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fia-doc"
+version = "0.0.1"
+dynamic = ["dependencies"]
+
+requires-python = ">=3.12"
+authors = [
+#  {name = "someone"}
+]
+
+description = ""
+readme = "README.md"
+#license = {file = "LICENSE.txt"}
+
+[tool.setuptools]
+# TODO: clean this up!!! should be auto-detected, maybe switch to src layout
+packages = ["fiadoc", "fiadoc.models"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
